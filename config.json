@@ -1,6 +1,6 @@
 {
-  "appSecret": "",
-  "pageAccessToken": "",
-  "validationToken": "",
-  "serverURL": ""
+  "appSecret": "df703e88190c9f732aadf771087989e7",
+  "pageAccessToken": "asdf",
+  "validationToken": "super_tajne_heslo",
+  "serverURL": "http://bytiky.cz:5000"
 }
