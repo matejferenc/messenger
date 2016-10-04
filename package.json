@@ -1,5 +1,5 @@
 {
-  "name": "messenger-get-started",
+  "name": "messenger",
   "version": "1.0.0",
   "description": "Get started example for Messenger Platform",
   "main": "app.js",
@@ -10,16 +10,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fbsamples/messenger-platform-samples.git"
+    "url": "https://github.com/matejferenc/messenger.git"
   },
-  "author": "Facebook",
+  "author": "Matej Ferenc",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.15.0",
+    "body-parser": "^1.15.2",
     "config": "^1.20.4",
     "ejs": "^2.4.2",
-    "express": "^4.13.4",
-    "request": "^2.72.0"
+    "express": "^4.14.0",
+    "request": "^2.75.0"
   },
   "engines": {
     "node": "~4.1.2"
