@@ -315,8 +315,9 @@ function receivedMessage(event) {
   } else if (messageAttachments) {
     if (messageAttachments[0].type == 'location') {
       processLocation(messageAttachments[0].payload.coordinates);
+    } else {
+      sendTextMessage(senderID, "Message with attachment received. Type:" + messageAttachments[0].type);
     }
-    sendTextMessage(senderID, "Message with attachment received. Type:" + messageAttachments[0].type);
   }
 }
 
