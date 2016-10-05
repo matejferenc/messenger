@@ -313,10 +313,10 @@ function receivedMessage(event) {
         sendTextMessage(senderID, messageText);
     }
   } else if (messageAttachments) {
-    sendTextMessage(senderID, "Message with attachment received. Type:" + messageAttachments[0].type);
     if (messageAttachments[0].type == 'location') {
       processLocation(messageAttachments[0].payload.coordinates);
     }
+    sendTextMessage(senderID, "Message with attachment received. Type:" + messageAttachments[0].type);
   }
 }
 
