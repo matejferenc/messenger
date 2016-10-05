@@ -831,9 +831,16 @@ function callSendAPI(messageData) {
 // Start server
 // Webhooks must be available via SSL with a certificate signed by a valid 
 // certificate authority.
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
-});
+//app.listen(app.get('port'), function() {
+//  console.log('Node app is running on port', app.get('port'));
+//});
+var ssl = {
+  key: fs.readFileSync('/etc/letsencrypt/live/bytiky.cz/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/bytiky.cz/fullchain.pem'),
+  ca: fs.readFileSync('/etc/letsencrypt/live/bytiky.cz/chain.pem')
+}
+
+https.createServer(ssl, app).listen(process.env.PORT || 5443)
 
 module.exports = app;
 
