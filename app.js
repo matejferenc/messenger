@@ -15,8 +15,10 @@ const
   config = require('./config.json'),
   crypto = require('crypto'),
   express = require('express'),
-  https = require('https'),  
-  request = require('request');
+  https = require('https'),
+  request = require('request'),
+  fs = require('fs');
+
 
 var app = express();
 app.set('port', process.env.PORT || 5000);
@@ -840,7 +842,7 @@ var ssl = {
   ca: fs.readFileSync('/etc/letsencrypt/live/bytiky.cz/chain.pem')
 }
 
-https.createServer(ssl, app).listen(process.env.PORT || 5443)
+https.createServer(ssl, app).listen(process.env.PORT || 5443);
 
 module.exports = app;
 
