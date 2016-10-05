@@ -314,14 +314,14 @@ function receivedMessage(event) {
     }
   } else if (messageAttachments) {
     if (messageAttachments[0].type == 'location') {
-      processLocation(messageAttachments[0].payload.coordinates);
+      processLocation(senderID, messageAttachments[0].payload.coordinates);
     } else {
       sendTextMessage(senderID, "Message with attachment received. Type:" + messageAttachments[0].type);
     }
   }
 }
 
-function processLocation(coordinates) {
+function processLocation(senderID, coordinates) {
   sendTextMessage(senderID, 'Coordinates: ' + coordinates.lat + ':' + coordinates.long);
 }
 
