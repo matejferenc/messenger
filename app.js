@@ -12,7 +12,7 @@
 
 const 
   config = require('./config.json'),
-  config = require('./strategy/strategy.js'),
+  strategy = require('./strategy/strategy.js'),
   bodyParser = require('body-parser'),
   crypto = require('crypto'),
   express = require('express'),
@@ -252,8 +252,8 @@ function receivedMessage(event) {
     return;
   }
 
-  if (new Strategy().apply(message)) {
-    var text = new Strategy().execute(message);
+  if (new strategy.Strategy().apply(message)) {
+    var text = new strategy.Strategy().execute(message);
     sendTextMessage(senderID, text);
     return;
   }
