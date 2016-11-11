@@ -11,8 +11,9 @@
 'use strict';
 
 const 
-  bodyParser = require('body-parser'),
   config = require('./config.json'),
+  config = require('./strategy/strategy.js'),
+  bodyParser = require('body-parser'),
   crypto = require('crypto'),
   express = require('express'),
   https = require('https'),
@@ -250,6 +251,13 @@ function receivedMessage(event) {
     sendTextMessage(senderID, "Quick reply tapped");
     return;
   }
+
+  if (new Strategy().apply(message)) {
+    var text = new Strategy().execute(message);
+    sendTextMessage(senderID, text);
+    return;
+  }
+
 
   if (messageText) {
 
