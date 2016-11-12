@@ -252,8 +252,8 @@ function receivedMessage(event) {
     return;
   }
 
-  if (new strategy.Strategy().apply(message)) {
-    var text = new strategy.Strategy().execute(message);
+  if (strategy.apply(message)) {
+    var text = strategy.execute(message);
     sendTextMessage(senderID, text);
     return;
   }
